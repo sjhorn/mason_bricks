@@ -1,0 +1,9 @@
+export 'data/feature1_model.dart';
+export 'data/feature1_repository_impl.dart';
+export 'domain/feature1_repository.dart';
+export 'domain/feature1.dart';
+export 'presentation/bloc/feature1_edit_bloc.dart';
+export 'presentation/bloc/feature1_read_bloc.dart';
+export 'presentation/views/feature1_edit_view.dart';
+export 'presentation/views/feature1_read_view.dart';
+export 'presentation/widgets/feature1_widget.dart';
