@@ -25,12 +25,12 @@ Then add your properties! (Optional)
 
 `mason make scaffolding_home_test -c scaffolding_config.json`
 
-[Example Config](https://github.com/sjhorn/mason_bricks/tree/master/bricks/scaffolding/scaffolding_config_template.json):
+[Example Config](https://github.com/sjhorn/mason_bricks/tree/main/bricks/scaffolding_home/config_template.json):
 
 ```json
 {
   "package": "scaffolding_sample",
-  "features": "feature1",
+  "features": "feature1"
 }
 ```
 

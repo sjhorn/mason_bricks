@@ -57,10 +57,13 @@ mason add scaffolding --git-url https://github.com/sjhorn/mason_bricks --git-pat
 mason make scaffolding --package scaffolding_sample --feature feature1 --properties "String firstName=Your first name, String lastName=Your surname, bool registered=false, int age=21" --generate-tests true --generate-home true
 ```
 
-To confirm the tests are all passing with full coverage run the following from the based of the project:
+To confirm the tests are all passing with full coverage run the following from the based of the project (noting the removal of the widget_test from flutter create):
 ```
+rm test/widget_test.dart 
 flutter test --coverage && genhtml -p ${PWD}/lib -o coverage coverage/lcov.info && open coverage/index.html
 ```
+You should see a result similar to the image below in your browser. 
+![Unit Test generation](test_coverage.png)
 
 ## Variables for the Command Line and Config Json ✨
 
@@ -75,7 +78,7 @@ flutter test --coverage && genhtml -p ${PWD}/lib -o coverage coverage/lcov.info 
 
 `mason make scaffolding -c scaffolding_config.json`
 
-[Example Config](https://github.com/sjhorn/mason_bricks/tree/master/bricks/scaffolding/config_template.json):
+[Example Config](https://github.com/sjhorn/mason_bricks/tree/main/bricks/scaffolding/config_template.json):
 
 ```json
 {

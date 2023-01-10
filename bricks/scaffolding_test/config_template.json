@@ -1,0 +1,5 @@
+{
+    "package": "scaffolding_sample",
+    "feature": "feature1",
+    "properties": "String firstName=Your first name, String lastName=Your surname, bool registered=false, int age=21"
+  }

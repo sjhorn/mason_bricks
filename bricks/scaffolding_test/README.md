@@ -24,7 +24,7 @@ Then add your properties! (Optional)
 
 `mason make scaffolding_test -c config_template.json`
 
-[Example Config](https://github.com/sjhorn/mason_bricks/tree/master/bricks/scaffolding_test/config_template.json):
+[Example Config](https://github.com/sjhorn/mason_bricks/tree/main/bricks/scaffolding_test/config_template.json):
 
 ```json
 {

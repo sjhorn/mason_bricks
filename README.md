@@ -23,14 +23,14 @@ A collection of bricks I have been experimenting with to speed up development
 
 ## Documentation
 
-- [scaffolding](https://github.com/sjhorn/mason_bricks/tree/master/bricks/scaffolding)
-- [scaffolding-test](https://github.com/sjhorn/mason_bricks/tree/master/bricks/scaffolding-test)
-- [scaffolding-home](https://github.com/sjhorn/mason_bricks/tree/master/bricks/scaffolding-home)
-- [scaffolding-home-test](https://github.com/sjhorn/mason_bricks/tree/master/bricks/scaffolding-home-test)
+- [scaffolding](https://github.com/sjhorn/mason_bricks/tree/main/bricks/scaffolding)
+- [scaffolding-test](https://github.com/sjhorn/mason_bricks/tree/main/bricks/scaffolding-test)
+- [scaffolding-home](https://github.com/sjhorn/mason_bricks/tree/main/bricks/scaffolding-home)
+- [scaffolding-home-test](https://github.com/sjhorn/mason_bricks/tree/main/bricks/scaffolding-home-test)
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/sjhorn/mason_bricks/tree/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/sjhorn/mason_bricks/tree/main/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Credit
 
