@@ -1,0 +1,19 @@
+name: scaffolding_home
+description: Scaffolding a flutter app to list the generated features, this depends on the scaffolding brick
+version: 0.0.1
+
+environment:
+  mason: ">=0.1.0-dev.39 <0.1.0"
+
+vars:
+  package:
+    type: string
+    description: Package name
+    default: scaffolding_sample
+    prompt: What is the package name of your flutter project?
+  features:
+    type: string
+    description: Feature name(s)
+    default: feature1
+    prompt: What are your feature name(s) (eg. feature1,feature2,feature3) ?
+

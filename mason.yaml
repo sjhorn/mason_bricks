@@ -1,0 +1,9 @@
+bricks:
+  scaffolding:
+    path: bricks/scaffolding
+  scaffolding_home:
+    path: bricks/scaffolding_home
+  scaffolding_unit_test:
+    path: bricks/scaffolding_test
+  scaffolding_home_test:
+    path: bricks/scaffolding_home_test
