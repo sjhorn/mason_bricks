@@ -14,7 +14,7 @@ Please note this has nothing to do with the flutter Scaffold (https://api.flutte
 
 ![Home Scaffolding](home_scaffold.png)
 ![Feature Scaffolding](feature1_scaffold.png)
-![Unit Test generation](test_coverage.png)
+
 
 ## Table of Contents
 
@@ -25,14 +25,42 @@ Please note this has nothing to do with the flutter Scaffold (https://api.flutte
 
 ## How to use 🚀
 
+### Simple flutter project
+
+Start with a simple flutter project and add the following dependencies
+
+```
+equatable
+uuid
+flutter_bloc
+```
+For the generated unit test you will also need
+```
+mockito
+bloc_test
+```
+
+The steps to add from the command line would be:
+```
+flutter create scaffolding_sample
+cd scaffolding_sample
+flutter pub add equatable uuid flutter_bloc
+flutter pub add mockito bloc_test --dev
+```
+Next setup mason to scaffold your code.
+
 ### Command Line
 
 ```
 mason init
 mason add scaffolding --git-url https://github.com/sjhorn/mason_bricks --git-path bricks/scaffolding
-mason make scaffolding --package scaffolding_sample --feature contact --properties "String firstname=Your first name, String lastname=Your suranme, bool registered=false" --generate-tests true --generate-home true
+mason make scaffolding --package scaffolding_sample --feature feature1 --properties "String firstName=Your first name, String lastName=Your surname, bool registered=false, int age=21" --generate-tests true --generate-home true
 ```
-Then add your properties! (Optional)
+
+To confirm the tests are all passing with full coverage run the following from the based of the project:
+```
+flutter test --coverage && genhtml -p ${PWD}/lib -o coverage coverage/lcov.info && open coverage/index.html
+```
 
 ## Variables for the Command Line and Config Json ✨
 
@@ -84,13 +112,13 @@ lib/
 │           ├─ feature1_edit_view.dart
 │           └─ feature1_read_view.dart
 └─ shared/
-      └─ presentation/
+   └─ presentation/
          └─ list_table.dart
 ```
 
 Files from the scaffolding_test and scaffolding_main that are included for the options `--generate-tests true --generate-home true`
 
-When --generate-test true
+When `--generate-test` true
 ```
 test/
 └─ features/
@@ -109,9 +137,15 @@ test/
             └─ feature1_read_view_test.dart
 ```
 
-When --generate-home true
+When `--generate-home` true
 ```
 lib/
-├─ scaffold_main.dart
+├─ main.dart
 └─ scaffold_app.dart
+```
+
+When both `--generate-home true` and `--generate-test true`
+```
+test/
+└─ scaffold_app_test.dart
 ```

@@ -32,6 +32,11 @@ A collection of bricks I have been experimenting with to speed up development
 
 Please read [CONTRIBUTING.md](https://github.com/sjhorn/mason_bricks/tree/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
+## Credit
+
+- Thanks to [Felix Angelov](https://github.com/felangel) for creating the implementations of bloc and mason. 
+- Thanks for [Luke Moody](https://github.com/LukeMoody01) as I borrowed his structure and some content for this repo
+
 ## Maintainers
 
 - [Scott Horn](https://github.com/sjhorn)

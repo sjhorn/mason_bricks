@@ -18,7 +18,6 @@ Future<void> run(HookContext context) async {
     ...context.vars,
     'properties': propertyList,
   };
-  logger.info(context.vars.toString());
 }
 
 PropertyList _parseProperties(String properties, Logger logger) {

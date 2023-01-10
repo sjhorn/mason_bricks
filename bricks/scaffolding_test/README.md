@@ -9,7 +9,7 @@
 ```
 mason init
 mason add scaffolding_test --git-url https://github.com/sjhorn/mason_bricks --git-path bricks/scaffolding_test
-mason make scaffolding_test --package scaffolding_sample --feature contact --properties "String firstname=Your first name, String lastname=Your suranme, bool registered=false"
+mason make scaffolding_test --package scaffolding_sample --feature feature1 --properties "String firstName=Your first name, String lastName=Your surname, bool registered=false, int age=21"
 ```
 Then add your properties! (Optional)
 
