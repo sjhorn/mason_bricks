@@ -14,12 +14,12 @@ A collection of bricks I have been experimenting with to speed up development
 
 ## Bricks 🧱
 
-| Brick                                                          | Description                                                                                                                   | Version |
-| -------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------- |
-| [scaffolding]()                     | A brick to create your model with properties and all the supporting methods, copyWith, to/from json, equatable and more!      | 0.0.1   |
-| [scaffolding-test]()     | A brick to create multiple models including their properties and all the supporting methods/extensions!                       | 0.0.1   |
-| [scaffolding-home]()     | A brick to create a feature using best practices and your state management of choice!                                         | 0.0.1   |
-| [scaffolding-home-test]()                   | A brick to create your UI package that holds all your app's Colors, Typography, Layout, Theme, and more!                      | 0.0.1   |
+| Brick                                                                                                 | Description                                                                                                                   | Version |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------- |
+| [scaffolding](https://github.com/sjhorn/mason_bricks/tree/main/bricks/scaffolding)                    | A brick to create your model with properties and all the supporting methods, copyWith, to/from json, equatable and more!      | 0.0.1   |
+| [scaffolding-test](https://github.com/sjhorn/mason_bricks/tree/main/bricks/scaffolding-test)          | A brick to create multiple models including their properties and all the supporting methods/extensions!                       | 0.0.1   |
+| [scaffolding-home](https://github.com/sjhorn/mason_bricks/tree/main/bricks/scaffolding-home)          | A brick to create a feature using best practices and your state management of choice!                                         | 0.0.1   |
+| [scaffolding-home-test](https://github.com/sjhorn/mason_bricks/tree/main/bricks/scaffolding-home-test)| A brick to create your UI package that holds all your app's Colors, Typography, Layout, Theme, and more!                      | 0.0.1   |
 
 ## Documentation
 
