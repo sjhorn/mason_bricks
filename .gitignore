@@ -1,3 +1,4 @@
+.DS_Store
 .mason/
 .dart_tool/
 .packages
