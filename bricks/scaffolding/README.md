@@ -54,7 +54,7 @@ The steps to add from the command line would be:
 flutter create scaffolding_sample
 cd scaffolding_sample
 flutter pub add equatable uuid flutter_bloc
-flutter pub add mockito bloc_test --dev
+flutter pub add mocktail bloc_test --dev
 ```
 Next setup mason to scaffold your code.
 
