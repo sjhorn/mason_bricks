@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/sjhorn/scaffolding/master/assets/scaffolding_full.png" height="125" alt="scaffolding logo" />
+<img src="https://raw.githubusercontent.com/sjhorn/scaffolding/main/assets/scaffolding_full.png" height="125" alt="scaffolding logo" />
 </p>
 
 <p align="center">
@@ -21,8 +21,8 @@ Please note this has nothing to do with the flutter Scaffold (https://api.flutte
 
 ## Samples screens
 
-![Home Scaffolding](home_scaffold.png)
-![Feature Scaffolding](feature1_scaffold.png)
+![Home Scaffolding](https://raw.githubusercontent.com/sjhorn/mason_bricks/main/bricks/scaffolding/home_scaffold.png)
+![Feature Scaffolding](https://raw.githubusercontent.com/sjhorn/mason_bricks/main/bricks/scaffolding/feature1_scaffold.png)
 
 
 ## Table of Contents
@@ -62,7 +62,7 @@ Next setup mason to scaffold your code.
 
 ```
 mason init
-mason add scaffolding --git-url https://github.com/sjhorn/mason_bricks --git-path bricks/scaffolding
+mason add scaffolding
 mason make scaffolding --package scaffolding_sample --feature feature1 --properties "String firstName=Your first name, String lastName=Your surname, bool registered=false, int age=21" --generate-tests true --generate-home true
 ```
 
@@ -72,7 +72,7 @@ rm test/widget_test.dart
 flutter test --coverage && genhtml -p ${PWD}/lib -o coverage coverage/lcov.info && open coverage/index.html
 ```
 You should see a result similar to the image below in your browser. 
-![Unit Test generation](test_coverage.png)
+![Unit Test generation](https://raw.githubusercontent.com/sjhorn/mason_bricks/main/bricks/scaffolding/test_coverage.png)
 
 ## Variables for the Command Line and Config Json ✨
 

@@ -1,16 +1,23 @@
+<p align="center">
+<img src="https://raw.githubusercontent.com/sjhorn/scaffolding/master/assets/scaffolding_full.png" height="125" alt="scaffolding logo" />
+</p>
+
+<p align="center">
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
+<a href="https://github.com/felangel/mason"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Ftinyurl.com%2Fmason-badge" alt="Powered by Mason"></a>
+</p>
+
 # scaffolding_home brick
 
-[![Powered by Mason](https://img.shields.io/endpoint?url=https%3A%2F%2Ftinyurl.com%2Fmason-badge)](https://github.com/felangel/mason)
-
 This generates the home/index main and app files for a scaffolding app
-
+![Home Scaffolding](https://raw.githubusercontent.com/sjhorn/mason_bricks/main/bricks/scaffolding/home_scaffold.png)
 ## How to use 🚀
 
 ### Command Line
 
 ```
 mason init
-mason add scaffolding_home --git-url https://github.com/sjhorn/mason_bricks --git-path bricks/scaffolding_home 
+mason add scaffolding_home
 mason make scaffolding_home --package scaffolding_sample --features feature1
 ```
 Then add your properties! (Optional)

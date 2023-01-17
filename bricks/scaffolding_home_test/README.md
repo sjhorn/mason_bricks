@@ -17,7 +17,7 @@ This generates the unit tests for home/index main and app files for a scaffoldin
 
 ```
 mason init
-mason add scaffolding_home_test --git-url https://github.com/sjhorn/mason_bricks --git-path bricks/scaffolding_home_test 
+mason add scaffolding_home_test
 mason make scaffolding_home_test --package scaffolding_sample --features feature1
 ```
 Then add your properties! (Optional)

@@ -1,6 +1,6 @@
 name: scaffolding
 description: Scaffolding a flutter app with bloc, data/domain/presentation clean separation and optionally code tests/homepage
-version: 0.0.1
+version: 0.0.2
 repository: https://github.com/sjhorn/mason_bricks/tree/main/bricks/scaffolding
 
 environment:
