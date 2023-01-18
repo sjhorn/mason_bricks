@@ -79,7 +79,10 @@ void main() {
       when(() => mock{{feature.pascalCase()}}EditBloc.state).thenReturn(const {{feature.pascalCase()}}EditState({{#properties}}{{name}}:{{{testValue}}}, {{/properties}}));
       await tester.pumpWidget(widget);
 
-      await tester.tap(find.byKey({{feature.pascalCase()}}EditView.topLeftButtonKey));
+      final testFinder = find.byKey({{feature.pascalCase()}}EditView.topLeftButtonKey);
+      await tester.ensureVisible(testFinder);
+      await tester.tap(testFinder);
+
       await tester.pumpWidget(widget);
 
       verify(() => mockNavigatorObserver.didPop(any(), any())).called(1);
@@ -116,7 +119,11 @@ void main() {
       final addEvent = {{feature.pascalCase()}}EditEventSubmitted();
 
       when(() => mock{{feature.pascalCase()}}EditBloc.add(addEvent)).thenAnswer((_) async {}); 
-      await tester.tap(find.byKey({{feature.pascalCase()}}EditView.bottomRightButtonKey));
+
+      final testFinder = find.byKey({{feature.pascalCase()}}EditView.bottomRightButtonKey);
+      await tester.ensureVisible(testFinder);
+      await tester.tap(testFinder);
+
       await tester.pumpWidget(widget);
 
       verify(() => mock{{feature.pascalCase()}}EditBloc.add(addEvent)).called(1);
@@ -137,7 +144,11 @@ void main() {
       final deleteEvent = {{feature.pascalCase()}}EditEventDelete();
 
       when(() => mock{{feature.pascalCase()}}EditBloc.add(deleteEvent)).thenAnswer((_) async {}); 
-      await tester.tap(find.byKey({{feature.pascalCase()}}EditView.bottomLeftButtonKey));
+
+      final testFinder = find.byKey({{feature.pascalCase()}}EditView.bottomLeftButtonKey);
+      await tester.ensureVisible(testFinder);
+      await tester.tap(testFinder);
+      
       await tester.pumpWidget(widget);
 
       verify(() => mock{{feature.pascalCase()}}EditBloc.add(deleteEvent)).called(1);
@@ -192,7 +203,10 @@ void main() {
       when(() => mock{{feature.pascalCase()}}EditBloc.add(event)).thenAnswer((invocation) {});
       await tester.pumpWidget(widget);
 
-      await tester.tap(find.byKey(const Key('edit-{{name}}-field')));
+      final testFinder = find.byKey(const Key('edit-{{name}}-field'));
+      await tester.ensureVisible(testFinder);
+      await tester.tap(testFinder);
+      
       await tester.testTextInput.receiveAction(TextInputAction.done);
       await tester.pumpWidget(widget);
 
