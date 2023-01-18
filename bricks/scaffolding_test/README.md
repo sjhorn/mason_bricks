@@ -42,7 +42,7 @@ Then add your properties! (Optional)
 ```
 
 ## Outputs 📦
-
+```
 --package scaffolding_sample --feature feature1 --properties "String firstName=Your first name, String lastName=Your surname, bool registered=false, int age=21"
 test/
 └─ features/
@@ -59,3 +59,4 @@ test/
          └─ views/
             ├─ feature1_edit_view_test.dart
             └─ feature1_read_view_test.dart
+```
