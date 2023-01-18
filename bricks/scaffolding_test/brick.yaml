@@ -1,6 +1,6 @@
 name: scaffolding_test
 description: Unit tests for scaffolding a flutter app with bloc, data/domain/presentation
-version: 0.0.2
+version: 0.0.3
 repository: https://github.com/sjhorn/mason_bricks/tree/main/bricks/scaffolding_test
 
 environment:

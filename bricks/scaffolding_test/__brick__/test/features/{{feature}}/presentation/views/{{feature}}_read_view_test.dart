@@ -92,7 +92,9 @@ void main() {
           .thenReturn({{feature.pascalCase()}}ReadStateLoading());
       await tester.pumpWidget(widget);
 
-      await tester.tap(find.byKey(testKey));
+      final testFinder = find.byKey(testKey);
+      await tester.ensureVisible(testFinder);
+      await tester.tap(testFinder);
       await tester.pumpWidget(widget);
 
       final captured =
@@ -163,7 +165,10 @@ void main() {
       when(() => mock{{feature.pascalCase()}}ReadBloc.state).thenReturn({{feature.pascalCase()}}ReadStateLoading());
 
       await tester.pumpWidget(makeTestableWidget({{feature.pascalCase()}}ReadView(bloc: mock{{feature.pascalCase()}}ReadBloc)));
-      await tester.tap(find.byIcon(Icons.refresh));
+
+      final testFinder = find.byIcon(Icons.refresh);
+      await tester.ensureVisible(testFinder);
+      await tester.tap(testFinder);
       await tester.pump();
 
       verify(() => mock{{feature.pascalCase()}}ReadBloc.add(const {{feature.pascalCase()}}ReadEventReload())).called(1);
@@ -229,7 +234,10 @@ void main() {
       when(() => mock{{feature.pascalCase()}}ReadBloc.state).thenReturn({{feature.pascalCase()}}ReadStateLoading());
       await tester.pumpWidget(widget);
 
-      await tester.tap(find.byKey({{feature.pascalCase()}}ReadView.topLeftButtonKey));
+      final testFinder = find.byKey({{feature.pascalCase()}}ReadView.topLeftButtonKey);
+      await tester.ensureVisible(testFinder);
+      await tester.tap(testFinder);
+      
       await tester.pumpWidget(widget);
 
       verify(() => mockNavigatorObserver.didPop(any(), any())).called(1);
@@ -241,7 +249,10 @@ void main() {
       when(() => mock{{feature.pascalCase()}}ReadBloc.state).thenReturn({{feature.pascalCase()}}ReadStateLoading());
       await tester.pumpWidget(widget);
 
-      await tester.tap(find.byKey({{feature.pascalCase()}}ReadView.bottomRightButtonKey));
+      final testFinder = find.byKey({{feature.pascalCase()}}ReadView.bottomRightButtonKey);
+      await tester.ensureVisible(testFinder);
+      await tester.tap(testFinder);
+      
       await tester.pumpWidget(widget);
 
       final captured =
@@ -265,7 +276,10 @@ void main() {
           {{feature.pascalCase()}}ReadStateSuccess({{feature}}s: test{{feature.pascalCase()}}s, totalCount: 1));
       await tester.pumpWidget(widget);
 
-      await tester.tap(find.byKey(ObjectKey(test{{feature.pascalCase()}})));
+      final testFinder = find.byKey(ObjectKey(test{{feature.pascalCase()}}));
+      await tester.ensureVisible(testFinder);
+      await tester.tap(testFinder);
+
       await tester.pumpWidget(widget);
 
       final captured =
@@ -289,8 +303,10 @@ void main() {
           {{feature.pascalCase()}}ReadStateSuccess({{feature}}s: test{{feature.pascalCase()}}s, totalCount: 1));
       await tester.pumpWidget(widget);
 
-      await tester
-          .tap(find.byKey({{feature.pascalCase()}}ReadView.deleteButtonKey(test{{feature.pascalCase()}}.id)));
+      final testFinder = find.byKey({{feature.pascalCase()}}ReadView.deleteButtonKey(test{{feature.pascalCase()}}.id));
+      await tester.ensureVisible(testFinder);
+      await tester.tap(testFinder);
+      
       await tester.pumpWidget(widget);
 
       final captured =
