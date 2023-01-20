@@ -1,8 +1,8 @@
 ---
-name: Feature Request
-about: A new feature to be added to the project
-title: "feat: "
-labels: feature
+name: Enhancement
+about: A enhancment or feature to be added to the project
+title: "enhancement: "
+labels: enhancement
 ---
 
 **Brick**
