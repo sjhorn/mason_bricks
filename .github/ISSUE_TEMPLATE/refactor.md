@@ -9,11 +9,10 @@ labels: refactor
 
 <!--- Put an `x` in all the boxes that apply: -->
 
-- [ ] model
-- [ ] feature_brick
-- [ ] app_ui
-- [ ] service
-- [ ] service_package
+- [ ] scaffolding
+- [ ] scaffolding_test
+- [ ] scaffolding_home
+- [ ] scaffolding_home_test
 
 **Description**
 
