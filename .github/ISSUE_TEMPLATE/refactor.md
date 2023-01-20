@@ -1,6 +1,6 @@
 ---
 name: Refactor
-about: A code change that neither fixes a bug nor adds a feature
+about: Code or test refactor
 title: "refactor: "
 labels: refactor
 ---

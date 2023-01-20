@@ -1,8 +1,8 @@
 ---
-name: Refactor
-about: A code change that neither fixes a bug nor adds a feature
-title: "refactor: "
-labels: refactor
+name: Question
+about: Clarification on how something works, potentially good for docs
+title: "question: "
+labels: question
 ---
 
 **Brick**
@@ -16,4 +16,4 @@ labels: refactor
 
 **Description**
 
-Clearly describe what needs to be refactored any why. Please provide links to related issues (bugs or upcoming features) in order to help prioritize.
+Clearly describe question and any links to related docs. 
