@@ -93,7 +93,7 @@ class _{{name.pascalCase()}}Field extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final state = context.watch<{{feature.pascalCase()}}EditBloc>().state;
-    final hintText = state.{{feature}}?.{{name}} ?? {{{defaultValue}}};
+    final hintText = state.{{name}};
 
     return TextFormField(
       autofocus: true,
@@ -119,6 +119,12 @@ class _{{name.pascalCase()}}Field extends StatelessWidget {
 
 dynamic toType(String type, String value, dynamic emptyValue) {
   switch (type) {
+    case 'double':
+      try  {
+        return double.parse(value);
+      } catch(e) {
+        return emptyValue;
+      }
     case 'int':
       try  {
         return int.parse(value);

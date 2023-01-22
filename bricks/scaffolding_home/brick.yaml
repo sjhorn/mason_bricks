@@ -1,6 +1,6 @@
 name: scaffolding_home
 description: Scaffolding a flutter app to list the generated features, this depends on the scaffolding brick
-version: 0.0.2
+version: 0.0.4
 repository: https://github.com/sjhorn/mason_bricks/tree/main/bricks/scaffolding_home
 
 environment:

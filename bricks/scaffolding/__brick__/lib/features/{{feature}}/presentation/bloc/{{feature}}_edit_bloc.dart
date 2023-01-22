@@ -12,7 +12,7 @@ class {{feature.pascalCase()}}EditBloc extends Bloc<{{feature.pascalCase()}}Edit
   {{feature.pascalCase()}}EditBloc(this._repo, [{{feature.pascalCase()}}? entity])
       : super({{feature.pascalCase()}}EditState(
           {{feature}}: entity, {{#properties}}
-          {{name}}: entity?.{{name}} ?? {{{emptyValue}}},{{/properties}}
+          {{name}}: entity?.{{name}} ?? {{{defaultValue}}},{{/properties}}
         )) {
     {{#properties}}on<{{feature.pascalCase()}}EditEvent{{name.pascalCase()}}Changed>(_{{name}}Changed);
     {{/properties}}on<{{feature.pascalCase()}}EditEventSubmitted>(_submitted);

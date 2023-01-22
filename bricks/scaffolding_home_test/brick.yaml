@@ -1,6 +1,6 @@
 name: scaffolding_home_test
 description: Generates units test for the scaffolding_home brick, depends on scaffolding_home and scaffolding bricks
-version: 0.0.2
+version: 0.0.4
 repository: https://github.com/sjhorn/mason_bricks/tree/main/bricks/scaffolding_home_test
 
 environment:
