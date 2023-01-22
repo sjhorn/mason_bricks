@@ -5,9 +5,9 @@ class {{feature.pascalCase()}} extends Equatable {
   final String id;
   final DateTime created;
   final DateTime modified;
+  {{#properties}}
+  final {{type}} {{name}};{{/properties}}
 
-  {{#properties}} final {{type}} {{name}};
-  {{/properties}}
   {{feature.pascalCase()}}({ 
     String? id,
     DateTime? created,

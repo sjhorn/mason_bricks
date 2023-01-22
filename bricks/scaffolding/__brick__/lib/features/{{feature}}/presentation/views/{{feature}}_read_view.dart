@@ -1,6 +1,6 @@
  import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:{{package}}/shared/presentation/list_table.dart';
+import 'package:{{package}}/shared/presentation/shared.dart';
 
 import 'package:{{package}}/features/{{feature}}/{{feature}}.dart';
 
@@ -105,42 +105,16 @@ class _{{feature.pascalCase()}}ReadViewState extends State<{{feature.pascalCase(
       cacheCount: _list.length,
       columns: const [{{#properties}}'{{name.sentenceCase()}}',{{/properties}} ''],
       cache: _list,
-      renderRow: (entity) => [
-        ...[{{#properties}}entity.{{name}}.toString(), {{/properties}}]
-            .map((e) => Text(e)),
-        IconButton(
-          key: {{feature.pascalCase()}}ReadView.deleteButtonKey(entity.id),
-          icon: Icon(Icons.delete, color: Colors.red.shade300),
-          onPressed: () => bloc.add({{feature.pascalCase()}}ReadEventDelete(entity)),
+      renderRow: (entity) => [{{#properties}}
+        ListWidget{{type.pascalCase()}}(entity.{{name}}), {{/properties}}
+        ListWidgetDelete(
+          idKey: {{feature.pascalCase()}}ReadView.deleteButtonKey(entity.id), 
+          onPressed: () => bloc.add({{feature.pascalCase()}}ReadEventDelete(entity))
         )
       ],
       readMore: () => bloc.add(const {{feature.pascalCase()}}ReadEventReadMore()),
       edit: (entity) => _edit(entity),
     );
-    // return ListView.builder(
-    //   controller: _scrollController,
-    //   itemCount: _list.length == _totalCount ? _totalCount : _list.length + 1,
-    //   itemBuilder: (context, index) {
-    //     if (index == _list.length) {
-    //       Future.delayed(
-    //           Duration.zero, 
-    //           () => bloc.add(const {{feature.pascalCase()}}ReadEventReadMore()),
-    //       );
-    //       return const Center(
-    //         child: CircularProgressIndicator(),
-    //       );
-    //     } else {
-    //       var entity = _list[index];
-    //       return {{feature.pascalCase()}}Widget(
-    //         entity: entity,
-    //         key: ValueKey(entity.id),
-    //         focusScopeNode: _node,
-    //         onDelete: () => bloc.add({{feature.pascalCase()}}ReadEventDelete(entity)),
-    //         onEdit: () => _edit(entity),
-    //       );
-    //     }
-    //   },
-    // );
   }
 
   void _create() {

@@ -86,16 +86,23 @@ class _Property {
       case 'String':
         emptyValue = "''";
         testValue = "'testString'";
-        defaultValue = "'$defaultValue'";
+        defaultValue =
+            !defaultValue.startsWith("'") ? "'$defaultValue'" : defaultValue;
         break;
       case 'int':
-      case 'double':
         emptyValue = 0;
         testValue = 1;
+        defaultValue = defaultValue == '' ? '${emptyValue}' : defaultValue;
+        break;
+      case 'double':
+        emptyValue = 0.0;
+        testValue = 1.1;
+        defaultValue = defaultValue == '' ? '${emptyValue}' : defaultValue;
         break;
       case 'bool':
         emptyValue = false;
         testValue = true;
+        defaultValue = defaultValue == '' ? '${emptyValue}' : defaultValue;
         break;
       default:
         throw Exception('Unsupported type for property');
