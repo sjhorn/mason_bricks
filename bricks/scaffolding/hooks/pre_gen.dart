@@ -51,7 +51,7 @@ PropertyList _addProperty(
   if (splitDefaultValue.length == 2) {
     defaultValue = splitDefaultValue[1];
   }
-  String typeProperty = splitDefaultValue[0];
+  String typeProperty = splitDefaultValue[0].trim();
   final splitProperty = typeProperty.trim().split(' ');
   if (splitProperty.length != 2) {
     logger.alert(

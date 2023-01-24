@@ -36,10 +36,10 @@ class ListWidgetBool extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Icon(
-      entity
-          ? Icons.check_box_outlined
-          : Icons.check_box_outline_blank_outlined,
+    return Checkbox(
+      value: entity,
+      splashRadius: 0,
+      onChanged: null,
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
@@ -58,6 +59,27 @@ void main() {
         ),
       ),
     );
+  }
+  
+  runWidgetChange(tester, fieldFinder, testValue) async {
+    await tester.ensureVisible(fieldFinder);
+    if(testValue is bool) {
+      await tester.tap(fieldFinder);
+      await tester.pump();
+    } else {
+      await tester.enterText(fieldFinder, '');
+      await tester.pump();
+      await tester.enterText(fieldFinder, '$testValue');
+      await tester.pump();
+    }
+  }
+
+  R makeChangeEvent<T,R>(R Function(T) ctor, T value) {
+    if(value is bool) {
+      return ctor(!value as T);
+    } else {
+      return ctor(value);
+    }
   }
 
   group('edit {{feature}} view ...', () {
@@ -160,8 +182,7 @@ void main() {
         {{feature}}: test{{feature.pascalCase()}},{{#properties}}
         {{name}}:{{{testValue}}},{{/properties}}
       );
-      const newValue = {{{testValue}}};
-      const event = {{feature.pascalCase()}}EditEvent{{name.pascalCase()}}Changed(newValue);
+      
       var view = {{feature.pascalCase()}}EditView(
         bloc: mock{{feature.pascalCase()}}EditBloc,
         entity: test{{feature.pascalCase()}},
@@ -169,21 +190,16 @@ void main() {
       var widget = makeTestableWidget(view);
 
       when(() => mock{{feature.pascalCase()}}EditBloc.state).thenReturn(initialState);
-      when(() => mock{{feature.pascalCase()}}EditBloc.add(event)).thenAnswer((invocation) {});
+      final fieldFinder = find.byKey(const Key('edit-{{name}}-field'));
+
+      final event = makeChangeEvent<{{type}}, {{feature.pascalCase()}}EditEvent{{name.pascalCase()}}Changed>({{feature.pascalCase()}}EditEvent{{name.pascalCase()}}Changed.new, {{{testValue}}});
+
+      when(() => mockFeature1EditBloc.add(event)).thenAnswer((invocation) {});
       await tester.pumpWidget(widget);
 
-      await tester.enterText(
-        find.byKey(const Key('edit-{{name}}-field')),
-        '',
-      );
-      await tester.pump();
-      await tester.enterText(
-        find.byKey(const Key('edit-{{name}}-field')),
-        newValue.toString(),
-      );
-      await tester.pump();
+      await runWidgetChange(tester, fieldFinder, {{{testValue}}});
 
-      verify(() => mock{{feature.pascalCase()}}EditBloc.add(event)).called(greaterThan(0));
+      verify(() => mockFeature1EditBloc.add(event)).called(greaterThan(0));
     });
 
     testWidgets('enter completes editing for {{name}}', (tester) async {
@@ -208,19 +224,13 @@ void main() {
       await tester.tap(testFinder);
       
       await tester.testTextInput.receiveAction(TextInputAction.done);
+      await tester.sendKeyEvent(LogicalKeyboardKey.enter);
       await tester.pumpWidget(widget);
 
       verify(() => mock{{feature.pascalCase()}}EditBloc.add(event)).called(1);
     });
     {{/properties}}
 
-    test('test toType method', () async {
-        expect(toType('String', 'good', 'backup'), equals('good'));
-        expect(toType('int', '1', 2), equals(1));
-        expect(toType('int', 'one', 2), equals(2));
-        expect(toType('bool', 'true', false), equals(true));
-        expect(toType('bool', '_', false), equals(false));
-      },
-    );
+    
   });
 }

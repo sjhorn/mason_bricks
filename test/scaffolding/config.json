@@ -1,0 +1,8 @@
+{
+    "package": "scaffolding_sample",
+    "feature": "feature1",
+    "features": "feature1",
+    "properties": "String name=Your name, int age=18, double height=184, bool registered=false,String emptyName,int emptyAge,double emptyHeight,bool emptyRegistered",
+    "generate-tests": false,
+    "generate-home": false
+}

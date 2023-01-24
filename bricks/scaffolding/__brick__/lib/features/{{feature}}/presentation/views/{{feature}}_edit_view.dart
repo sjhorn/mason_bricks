@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:{{package}}/shared/presentation/shared.dart';
 
 import 'package:{{package}}/features/{{feature}}/{{feature}}.dart';
 
@@ -50,7 +51,7 @@ class {{feature.pascalCase()}}EditView extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
-                      children: const [{{#properties}}
+                      children: [{{#properties}}
                         _{{name.pascalCase()}}Field(),{{/properties}}
                       ],
                     ),
@@ -87,53 +88,19 @@ class {{feature.pascalCase()}}EditView extends StatelessWidget {
   }
 }
 {{#properties}}
-class _{{name.pascalCase()}}Field extends StatelessWidget {
-  const _{{name.pascalCase()}}Field({Key? key}) : super(key: key);
+class _{{name.pascalCase()}}Field extends EditWidget<{{type}}> {
+  _{{name.pascalCase()}}Field()
+      : super(
+          key: const Key('edit-{{name}}-field'),
+          labelText: '{{name.titleCase()}}',
+          initialValue: (context) =>
+              context.watch<{{feature.pascalCase()}}EditBloc>().state.{{name}},
+          changedEvent: (context, newValue) => context
+              .read<{{feature.pascalCase()}}EditBloc>()
+              .add({{feature.pascalCase()}}EditEvent{{name.pascalCase()}}Changed(newValue)),
+          submittedEvent: (context) => context
+              .read<{{feature.pascalCase()}}EditBloc>()
+              .add({{feature.pascalCase()}}EditEventSubmitted()),
+        );
+}{{/properties}}
 
-  @override
-  Widget build(BuildContext context) {
-    final state = context.watch<{{feature.pascalCase()}}EditBloc>().state;
-    final hintText = state.{{name}};
-
-    return TextFormField(
-      autofocus: true,
-      key: const Key('edit-{{name}}-field'),
-      initialValue: state.{{name}}.toString(),
-      textInputAction: TextInputAction.done,
-      decoration: InputDecoration(
-        labelText: '{{name.titleCase()}}',
-        hintText: hintText.toString(),
-      ),
-      maxLength: 255,
-      onChanged: (value) {
-        context
-            .read<{{feature.pascalCase()}}EditBloc>()
-            .add({{feature.pascalCase()}}EditEvent{{name.pascalCase()}}Changed(toType('{{type}}', value, {{{emptyValue}}})) );
-      },
-      onEditingComplete: () =>
-          context.read<{{feature.pascalCase()}}EditBloc>().add({{feature.pascalCase()}}EditEventSubmitted()),
-    );
-  }
-}
-{{/properties}}
-
-dynamic toType(String type, String value, dynamic emptyValue) {
-  switch (type) {
-    case 'double':
-      try  {
-        return double.parse(value);
-      } catch(e) {
-        return emptyValue;
-      }
-    case 'int':
-      try  {
-        return int.parse(value);
-      } catch(e) {
-        return emptyValue;
-      }
-    case 'bool':
-      return value.toLowerCase().endsWith('true');
-    default:
-      return value;
-  }
-}
