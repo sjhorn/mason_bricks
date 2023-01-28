@@ -1,0 +1,4 @@
+analyzer:
+  exclude:
+    - examples/**
+    - bricks/**/__brick__
