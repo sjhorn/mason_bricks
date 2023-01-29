@@ -1,18 +1,16 @@
 name: scaffolding_home_test
 description: Generates units test for the scaffolding_home brick, depends on scaffolding_home and scaffolding bricks
-version: 0.0.5
+version: 0.1.0
 repository: https://github.com/sjhorn/mason_bricks/tree/main/bricks/scaffolding_home_test
-
-environment:
-  mason: ">=0.1.0-dev.39 <0.1.0"
-
-vars:
-  package:
+environment: 
+  mason: '>=0.1.0-dev.39 <0.1.0'
+vars: 
+  package: 
     type: string
     description: Package name
     default: scaffolding_sample
     prompt: What is the package name of your flutter project?
-  features:
+  features: 
     type: string
     description: Feature name(s)
     default: feature1
