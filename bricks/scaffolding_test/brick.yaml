@@ -1,24 +1,22 @@
 name: scaffolding_test
 description: Unit tests for scaffolding a flutter app with bloc, data/domain/presentation
-version: 0.0.5
+version: 0.1.0
 repository: https://github.com/sjhorn/mason_bricks/tree/main/bricks/scaffolding_test
-
-environment:
-  mason: ">=0.1.0-dev.39 <0.1.0"
-
-vars:
-  package:
+environment: 
+  mason: '>=0.1.0-dev.39 <0.1.0'
+vars: 
+  package: 
     type: string
     description: Package name
     default: scaffolding_sample
     prompt: What is the package name of your flutter project?
-  feature:
+  feature: 
     type: string
     description: Feature name
     default: feature1
-    prompt: What is your feature name (eg. Todo, DiaryProject, contact) ? 
-  properties:
+    prompt: What is your feature name (eg. Todo, DiaryProject, contact) ?
+  properties: 
     type: string
     description: properties of feature
-    prompt: Enter property list in the following format "String firstname=Your first name, String lastname=Your suranme, bool registered=false" ?
-  
+    prompt: 'Enter property list in the following format "String firstname=Your first name, String lastname=Your suranme, bool registered=false" ?'
+

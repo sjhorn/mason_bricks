@@ -1,33 +1,32 @@
 name: scaffolding
 description: Scaffolding a flutter app with bloc, data/domain/presentation clean separation and optionally code tests/homepage
-version: 0.0.5
+version: 0.1.0
 repository: https://github.com/sjhorn/mason_bricks/tree/main/bricks/scaffolding
-
-environment:
-  mason: ">=0.1.0-dev.39 <0.1.0"
-
-vars:
-  package:
+environment: 
+  mason: '>=0.1.0-dev.39 <0.1.0'
+vars: 
+  package: 
     type: string
     description: Package name
     default: scaffolding_sample
     prompt: What is the package name of your flutter project?
-  feature:
+  feature: 
     type: string
     description: Feature name
     default: feature1
-    prompt: What is your feature name (eg. Todo, DiaryProject, contact) ? 
-  properties:
+    prompt: What is your feature name (eg. Todo, DiaryProject, contact) ?
+  properties: 
     type: string
     description: properties of feature
-    prompt: Enter property list in the following format "String firstname=Your first name, String lastname=Your suranme, bool registered=false" ?
-  generate-tests:
+    prompt: 'Enter property list in the following format "String firstname=Your first name, String lastname=Your suranme, bool registered=false" ?'
+  generate-tests: 
     type: boolean
     description: automatically generate unit tests
     default: true
     prompt: Do you want unit tests generated?
-  generate-home:
+  generate-home: 
     type: boolean
     description: automatically generate the home page main function
     default: false
     prompt: Do you want to generate the home page / main function ?
+

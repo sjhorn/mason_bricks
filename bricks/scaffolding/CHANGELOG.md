@@ -1,3 +1,5 @@
+0.1.0
+Bumping minor release after milestone https://github.com/sjhorn/mason_bricks/milestone/1
 # 0.0.5
 
 - enhancement: add type based form components to edit view https://github.com/sjhorn/mason_bricks/issues/5 
@@ -11,3 +13,4 @@
 # 0.0.1
 
 - Build basic hooks and templates for the CRUD application, confirm running on macos
+
