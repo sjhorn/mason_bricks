@@ -157,10 +157,11 @@ void main() {
     await makeScaffolingBrick(brickPath, logger);
   }
 
-  Future flutterRemoveSkeletonTests() async {
+  Future<int> flutterRemoveSkeletonTests() async {
     Directory testDir = Directory(p.join(workingDir.path, 'test'));
     await testDir.delete(recursive: true);
     await testDir.create();
+    return ExitCode.success.code;
   }
 
   Future<int> flutterCreate() async => await debugRun('flutter', [
@@ -310,17 +311,8 @@ void main() {
     expect(await flutterPubAddDev(), equals(ExitCode.success.code),
         reason: '🪲 Flutter pub add --dev failed');
 
-    expect(await flutterTestCoverage(), equals(ExitCode.success.code),
-        reason: '🪲 Flutter test --coverage');
-
-    expect(
-        await testCoverage(File(p.join(
-          workingDir.path,
-          'coverage',
-          'lcov.info',
-        ))),
-        equals(100),
-        reason: '🪲 Test coverage did not complete with 100% coverage');
+    expect(await flutterRemoveSkeletonTests(), equals(ExitCode.success.code),
+        reason: '🪲 Flutter remove skeleton tests failed');
   });
 
   test('mason make + flutter and tests', () async {
